@@ -28,7 +28,7 @@ public class Solution {
            
        }
        
-       return head;
+       return head; // can change head to check, same thing
         
     }
 }
