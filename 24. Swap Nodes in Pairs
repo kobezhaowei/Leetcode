@@ -15,3 +15,23 @@ public class Solution {
         return n;
     }
 }
+
+
+public class Solution {
+    public ListNode swapPairs(ListNode head) {
+        
+        
+        ListNode check= head;
+       
+        while (check != null && check.next != null){ 
+            
+            int tem = check.val;
+            check.val = check.next.val;
+            check.next.val = tem;
+            
+            check = check.next.next;
+        }
+        
+        return head;
+    }
+}
