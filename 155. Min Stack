@@ -33,10 +33,13 @@ public class MinStack {
     }
     
     public void pop() {
-       if (stack.pop().equals(min.peek())) {
-            min.pop();
-        }
-        stack.pop();
+      if(!stack.isEmpty()){
+      int x = stack.pop();
+      if ( x == min.peek() ){
+         min.pop();
+                      }
+      
+      }
     }
     
     public int top() {
