@@ -1,0 +1,26 @@
+Given an array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+If the input array would be sorted (we can make it sorted), we could simply iterate over the elements in pairs (stepping by 2) and
+if the elements of the "pair" are different, we're done:
+
+Note: This solution sorts the input array; if this is unwanted or not allowed, it can be cloned first:
+
+arr = arr.clone();
+If input array is sorted, the Arrays.sort(arr) call can be left out of course.
+
+public class Solution {
+    public int singleNumber(int[] nums) {
+        
+        Arrays.sort(nums);
+        
+        for(int i = 0; i < nums.length - 1; i += 2){
+            if (nums[i] != nums[i + 1]){
+                return nums[i];
+            }
+        }
+        
+        return nums[nums.length - 1];
+    }
+}
